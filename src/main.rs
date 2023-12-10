@@ -7,7 +7,7 @@ fn main() {
     let mut day: Option<u32> = None;
     {
         let mut parser = ArgumentParser::new();
-        parser.set_description("Advent of Code 2019");
+        parser.set_description("Advent of Code 2023");
         parser.refer(&mut day).add_option(
             &["-d", "--day"],
             StoreOption,
