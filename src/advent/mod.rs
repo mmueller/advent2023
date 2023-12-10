@@ -5,10 +5,12 @@ trait AdventSolver {
 }
 
 pub mod day01;
+pub mod day02;
 
 pub fn solve(day: u32) -> Result<(), Error> {
-    let mut solver = match day {
-        1 => day01::Solver::default(),
+    let mut solver: Box<dyn AdventSolver> = match day {
+        1 => Box::new(day01::Solver::default()),
+        2 => Box::new(day02::Solver::default()),
         _ => {
             return Err(format_err!("Day {} not implemented.", day));
         }
