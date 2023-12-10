@@ -1,9 +1,9 @@
 use crate::advent::AdventSolver;
+use crate::util::conversions::digit_value;
+use crate::util::io;
 use anyhow::Error;
 use lazy_static::lazy_static;
 use regex::Regex;
-use std::fs::File;
-use std::io::{BufRead, BufReader};
 
 #[derive(Default)]
 pub struct Solver;
@@ -15,9 +15,7 @@ lazy_static! {
 
 impl AdventSolver for Solver {
     fn solve(&mut self, input_path: &str) -> Result<(), Error> {
-        let input = BufReader::new(File::open(input_path)?)
-            .lines()
-            .collect::<Result<Vec<_>, _>>()?;
+        let input = io::read_file_as_lines(input_path)?;
 
         // Part 1: ASCII digits only
         let calibration_values1 = input
@@ -61,7 +59,7 @@ pub fn get_calibration_value(s: &str, include_spelled_out_numbers: bool) -> Resu
 fn get_digit(s: &str, include_spelled_out_numbers: bool) -> Option<u64> {
     if let Some(c) = s.chars().nth(0) {
         if c.is_ascii_digit() {
-            Some(c as u64 - 48)
+            Some(digit_value(c))
         } else if include_spelled_out_numbers {
             DIGIT_REGEX.find(s).map(|m| match m.as_str() {
                 "one" => 1,

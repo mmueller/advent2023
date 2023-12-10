@@ -1,6 +1,7 @@
 use argparse::{ArgumentParser, StoreOption};
 
 pub mod advent;
+pub mod util;
 
 fn main() {
     let mut day: Option<u32> = None;
