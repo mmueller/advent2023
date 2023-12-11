@@ -8,5 +8,7 @@ edition = "2021"
 [dependencies]
 anyhow = "*"
 argparse = "*"
+itertools = "0.9"
 lazy_static = "*"
 regex = "*"
+strum = { version = "0.25", features = ["derive"] }

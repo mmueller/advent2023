@@ -8,6 +8,7 @@ pub mod day01;
 pub mod day02;
 pub mod day03;
 pub mod day04;
+pub mod day05;
 
 pub fn solve(day: u32) -> Result<(), Error> {
     let mut solver: Box<dyn AdventSolver> = match day {
@@ -15,6 +16,7 @@ pub fn solve(day: u32) -> Result<(), Error> {
         2 => Box::new(day02::Solver::default()),
         3 => Box::new(day03::Solver::default()),
         4 => Box::new(day04::Solver::default()),
+        5 => Box::new(day05::Solver::default()),
         _ => {
             return Err(format_err!("Day {} not implemented.", day));
         }
