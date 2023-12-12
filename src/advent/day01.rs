@@ -82,7 +82,7 @@ fn get_digit(s: &str, include_spelled_out_numbers: bool) -> Option<u64> {
 }
 
 #[cfg(test)]
-mod test {
+mod tests {
     use super::get_calibration_value;
 
     const EX1_IN: &[&str] = &["1abc2", "pqr3stu8vwx", "a1b2c3d4e5f", "treb7uchet"];

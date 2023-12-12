@@ -99,6 +99,3 @@ impl GameResult {
         self.red_count <= MAX_RED && self.green_count <= MAX_GREEN && self.blue_count <= MAX_BLUE
     }
 }
-
-#[cfg(test)]
-mod tests {}
