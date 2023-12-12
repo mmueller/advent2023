@@ -131,6 +131,7 @@ impl CamelHand {
         }
     }
 
+    #[allow(dead_code)]
     fn to_string(&self) -> String {
         self.cards.iter().collect::<String>()
     }

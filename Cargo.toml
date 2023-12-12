@@ -10,5 +10,6 @@ anyhow = "*"
 argparse = "*"
 itertools = "0.9"
 lazy_static = "*"
+num = "0.4"
 regex = "*"
 strum = { version = "0.25", features = ["derive"] }
